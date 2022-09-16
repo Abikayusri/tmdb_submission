@@ -36,6 +36,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    dynamicFeatures = [':favorite']
 }
 
 apply from: rootProject.file('gradle/script/basic-dependencies.gradle')
