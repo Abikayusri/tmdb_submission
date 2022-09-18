@@ -1,5 +1,6 @@
 package abika.sinau.core.utils
 
+import abika.sinau.core.R
 import android.app.Activity
 import android.view.View
 import android.widget.ImageView
@@ -53,5 +54,7 @@ internal fun ImageView.loadImage(url: String) {
     Glide
         .with(this)
         .load(url)
+        .error(R.mipmap.img_placeholder_empty)
+        .placeholder(R.mipmap.img_placeholder_empty)
         .into(this)
 }

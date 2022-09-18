@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyMovieDBSubmission</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="settings">Settings</string>
+    <string name="save_action">Save Action</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="label_empty_state">Data belum tersedia!</string>
+    <string name="label_username">Username</string>
+    <string name="label_scores">Score:</string>
+    <string name="label_release_date">Release Date:</string>
+</resources>
