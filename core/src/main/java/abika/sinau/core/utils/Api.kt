@@ -1,4 +1,4 @@
-package dependencies
+package abika.sinau.core.utils
 
 
 /**

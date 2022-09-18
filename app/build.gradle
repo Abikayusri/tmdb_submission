@@ -1,3 +1,6 @@
+import dependencies.ModulesName
+import dependencies.Versions
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -12,8 +15,8 @@ android {
 
     defaultConfig {
         applicationId "abika.sinau.mymoviedbsubmission"
-        minSdk 21
-        targetSdk 32
+        minSdkVersion Versions.androidMinSdkVersion
+        targetSdkVersion Versions.androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
 
@@ -36,12 +39,12 @@ android {
     buildFeatures {
         viewBinding = true
     }
-    dynamicFeatures = [':favorite']
+    dynamicFeatures = [ModulesName.favorite]
 }
 
 apply from: rootProject.file('gradle/script/basic-dependencies.gradle')
 apply from: rootProject.file('gradle/script/base-module.gradle')
 
 dependencies {
-    implementation project(":core")
+    implementation project(ModulesName.core)
 }

@@ -32,7 +32,7 @@ object Dependencies {
         const val activity = "androidx.activity:activity-ktx:1.5.1"
 
         private const val lifecycleVersion = "2.5.1"
-        private const val lifecycleExtensionVersion = "2.5.1"
+        private const val lifecycleExtensionVersion = "2.2.0"
         const val lifecycleViewModelKtx =
             "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
         const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionVersion"
