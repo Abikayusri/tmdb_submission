@@ -8,6 +8,7 @@ import abika.sinau.core.data.source.local.LocalDataSourceImpl
 import abika.sinau.core.data.source.remote.RemoteDataSourceImpl
 import abika.sinau.core.data.source.remote.network.ApiResponse
 import abika.sinau.core.data.source.remote.response.MovieListResponse
+import abika.sinau.core.data.source.remote.response.MovieResponse
 import abika.sinau.core.domain.model.Movie
 import abika.sinau.core.domain.repository.MovieRepository
 import abika.sinau.core.utils.AppExecutors
@@ -71,6 +72,17 @@ class MovieRepositoryImpl @Inject constructor(
             override fun loadFromNetwork(data: MovieListResponse): Flow<List<Movie>> {
                 val responseBody = data.movieResponses
                 return DataMapper.mapResponsesToDomain(responseBody)
+            }
+        }.asFlow()
+
+    override fun getDetailMovie(movieId: String): Flow<Resource<Movie>> =
+        object : NetworkResource<Movie, MovieResponse>() {
+            override suspend fun createCall(): Flow<ApiResponse<MovieResponse>> {
+                return remoteDataSource.getDetailMovie(movieId)
+            }
+
+            override fun loadFromNetwork(data: MovieResponse): Flow<Movie> {
+                return DataMapper.mapResponseToDomain(data)
             }
         }.asFlow()
 }

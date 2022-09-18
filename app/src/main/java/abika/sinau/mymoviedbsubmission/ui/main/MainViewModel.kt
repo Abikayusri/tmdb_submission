@@ -21,13 +21,13 @@ class MainViewModel @Inject constructor(
         return movieUseCase.getAllMovie().asLiveData()
     }
 
-    private var username: MutableLiveData<String> = MutableLiveData()
+    private var searchQuery: MutableLiveData<String> = MutableLiveData()
 
     fun setSearchQuery(search: String) {
-        username.value = search
+        searchQuery.value = search
     }
 
-    val resultSearch: LiveData<Resource<List<Movie>>> = Transformations.switchMap(username) {
+    val resultSearch: LiveData<Resource<List<Movie>>> = Transformations.switchMap(searchQuery) {
         movieUseCase.getSearchMovie(it).asLiveData()
     }
 }

@@ -20,6 +20,7 @@ object DataMapper {
                 posterPath = it.posterPath,
                 releaseDate = it.releaseDate,
                 title = it.title,
+                backdropPath = it.backdropPath,
                 isFavorite = false
             )
             movieList.add(movie)
@@ -37,6 +38,7 @@ object DataMapper {
                 posterPath = it.posterPath,
                 releaseDate = it.releaseDate,
                 title = it.title,
+                backdropPath = it.backdropPath,
                 isFavorite = false
             )
             movieList.add(movie)
@@ -52,6 +54,7 @@ object DataMapper {
                 posterPath = input.posterPath,
                 releaseDate = input.releaseDate,
                 title = input.title,
+                backdropPath = input.backdropPath,
                 isFavorite = false
             )
         )
@@ -65,6 +68,7 @@ object DataMapper {
                 posterPath = it.posterPath,
                 releaseDate = it.releaseDate,
                 title = it.title,
+                backdropPath = it.backdropPath,
                 isFavorite = it.isFavorite
             )
         }
@@ -75,6 +79,7 @@ object DataMapper {
         posterPath = input.posterPath,
         releaseDate = input.releaseDate,
         title = input.title,
+        backdropPath = input.backdropPath,
         isFavorite = input.isFavorite
     )
 }

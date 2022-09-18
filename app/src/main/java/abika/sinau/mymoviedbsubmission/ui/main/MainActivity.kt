@@ -5,10 +5,13 @@ import abika.sinau.core.data.Resource
 import abika.sinau.core.domain.model.Movie
 import abika.sinau.core.ui.MovieAdapter
 import abika.sinau.core.utils.gone
-import abika.sinau.core.utils.toastShort
 import abika.sinau.core.utils.visible
 import abika.sinau.mymoviedbsubmission.databinding.ActivityMainBinding
+import abika.sinau.mymoviedbsubmission.ui.detail.DetailActivity
+import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.EditText
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -133,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                 rvMovie.visible()
                 val adapter = MovieAdapter(object : MovieAdapter.OnClickListener {
                     override fun onClickItem(data: Movie) {
-                        toastShort("Menekan: ${data.title}")
+                        DetailActivity.newInstance(this@MainActivity, data)
                     }
                 })
 
@@ -147,6 +150,27 @@ class MainActivity : AppCompatActivity() {
         } else {
             showEmptyState()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu1 -> {
+                moveToFavoriteActivity()
+                true
+            }
+
+            else -> true
+        }
+    }
+
+    private fun moveToFavoriteActivity() {
+        startActivity(Intent(this, Class.forName("abika.sinau.favorite.FavoriteActivity")))
     }
 
     private fun showEmptyState() {

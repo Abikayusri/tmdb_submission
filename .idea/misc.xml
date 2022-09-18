@@ -3,10 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/app/src/main/res/layout/activity_detail.xml" value="0.264" />
         <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/app/src/main/res/menu/menu.xml" value="0.16574074074074074" />
         <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/core/src/main/res/drawable/ic_favorite_red_24dp.xml" value="0.1545" />
         <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/core/src/main/res/layout/empty_state.xml" value="0.24010416666666667" />
         <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/core/src/main/res/layout/item_movie_list.xml" value="0.4" />
+        <entry key="..\:/AndroidStudioProjects/Me/Dicoding/In Course/MADE/Submission-1/MyMovieDBSubmission/favorite/src/main/res/layout/activity_favorite.xml" value="0.16574074074074074" />
       </map>
     </option>
   </component>

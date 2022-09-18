@@ -13,5 +13,7 @@ data class MovieResponse(
     @SerializedName("release_date")
     val releaseDate: String?,
     @SerializedName("title")
-    val title: String?
+    val title: String?,
+    @SerializedName("backdrop_path")
+    val backdropPath: String?
 )

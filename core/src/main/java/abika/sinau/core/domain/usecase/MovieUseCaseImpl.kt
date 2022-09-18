@@ -23,4 +23,7 @@ class MovieUseCaseImpl @Inject constructor(
 
     override fun getSearchMovie(searchQuery: String): Flow<Resource<List<Movie>>> =
         movieRepository.getSearchMovie(searchQuery)
+
+    override fun getDetailMovie(movieId: String): Flow<Resource<Movie>> =
+        movieRepository.getDetailMovie(movieId)
 }

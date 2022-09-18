@@ -19,12 +19,3 @@ abstract class RepositoryModule {
     @Binds
     abstract fun provideRepository(movieRepositoryImpl: MovieRepositoryImpl): MovieRepository
 }
-
-//@Module(includes = [NetworkModule::class, DatabaseModule::class])
-//@InstallIn(SingletonComponent::class)
-//object RepositoryModule {
-//
-//    @Binds
-//    fun provideRepository(movieRepositoryImpl: MovieRepositoryImpl): MovieRepository {
-//    }
-//}

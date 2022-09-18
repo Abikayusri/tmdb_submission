@@ -20,6 +20,8 @@ data class MovieEntity(
     val releaseDate: String?,
     @ColumnInfo(name = "title")
     val title: String?,
+    @ColumnInfo(name = "backdrop_path")
+    val backdropPath: String?,
     @ColumnInfo(name = "isFavorite")
     var isFavorite: Boolean = false
 )

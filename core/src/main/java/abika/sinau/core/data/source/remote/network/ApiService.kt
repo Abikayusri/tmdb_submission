@@ -1,8 +1,10 @@
 package abika.sinau.core.data.source.remote.network
 
 import abika.sinau.core.data.source.remote.response.MovieListResponse
+import abika.sinau.core.data.source.remote.response.MovieResponse
 import abika.sinau.core.utils.Api.TOKEN
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -21,4 +23,10 @@ interface ApiService {
         @Query("api_key") apiKey: String = TOKEN,
         @Query("query") searchQuery: String,
     ): MovieListResponse
+
+    @GET("movie/{movie_id}")
+    suspend fun getDetailMovie(
+        @Query("api_key") apiKey: String = TOKEN,
+        @Path("movie_id") movieId: String,
+    ): MovieResponse
 }

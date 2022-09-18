@@ -3,6 +3,7 @@ package abika.sinau.core.data.source.remote
 import abika.sinau.core.data.source.remote.network.ApiResponse
 import abika.sinau.core.data.source.remote.network.ApiService
 import abika.sinau.core.data.source.remote.response.MovieListResponse
+import abika.sinau.core.data.source.remote.response.MovieResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -27,6 +28,13 @@ class RemoteDataSourceImpl @Inject constructor(private val apiService: ApiServic
     override suspend fun getSearchMovies(query: String): Flow<ApiResponse<MovieListResponse>> {
         return flow<ApiResponse<MovieListResponse>> {
             val response = apiService.getSearchMovie(searchQuery = query)
+            emit(ApiResponse.Success(response))
+        }.flowOn(Dispatchers.IO)
+    }
+
+    override suspend fun getDetailMovie(movieId: String): Flow<ApiResponse<MovieResponse>> {
+        return flow<ApiResponse<MovieResponse>> {
+            val response = apiService.getDetailMovie(movieId = movieId)
             emit(ApiResponse.Success(response))
         }.flowOn(Dispatchers.IO)
     }

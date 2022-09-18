@@ -3,6 +3,10 @@ import dependencies.ModulesName
 plugins {
     id 'com.android.dynamic-feature'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 android {
     compileSdk 32
@@ -18,11 +22,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 apply from: rootProject.file('gradle/script/basic-dependencies.gradle')
+apply from: rootProject.file('gradle/script/base-module.gradle')
 
 dependencies {
     implementation project(ModulesName.app)
     implementation project(ModulesName.core)
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 }
