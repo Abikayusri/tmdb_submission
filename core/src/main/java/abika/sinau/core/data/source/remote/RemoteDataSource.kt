@@ -3,7 +3,6 @@ package abika.sinau.core.data.source.remote
 import abika.sinau.core.data.source.remote.network.ApiResponse
 import abika.sinau.core.data.source.remote.response.MovieListResponse
 import kotlinx.coroutines.flow.Flow
-import retrofit2.Response
 
 
 /**

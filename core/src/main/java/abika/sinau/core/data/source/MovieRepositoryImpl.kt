@@ -1,6 +1,8 @@
 package abika.sinau.core.data.source
 
+
 import abika.sinau.core.data.NetworkBoundResource
+import abika.sinau.core.data.NetworkResource
 import abika.sinau.core.data.Resource
 import abika.sinau.core.data.source.local.LocalDataSourceImpl
 import abika.sinau.core.data.source.remote.RemoteDataSourceImpl
@@ -59,4 +61,16 @@ class MovieRepositoryImpl @Inject constructor(
         val movieEntity = DataMapper.mapDomainToEntity(movie)
         appExecutors.diskIO().execute { localDataSource.updateFavoriteMovie(movieEntity, state) }
     }
+
+    override fun getSearchMovie(searchQuery: String): Flow<Resource<List<Movie>>> =
+        object : NetworkResource<List<Movie>, MovieListResponse>() {
+            override suspend fun createCall(): Flow<ApiResponse<MovieListResponse>> {
+                return remoteDataSource.getSearchMovies(searchQuery)
+            }
+
+            override fun loadFromNetwork(data: MovieListResponse): Flow<List<Movie>> {
+                val responseBody = data.movieResponses
+                return DataMapper.mapResponsesToDomain(responseBody)
+            }
+        }.asFlow()
 }

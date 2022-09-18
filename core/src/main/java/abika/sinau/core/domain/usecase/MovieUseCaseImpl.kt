@@ -14,15 +14,13 @@ class MovieUseCaseImpl @Inject constructor(
     private val movieRepository: MovieRepository
 ) : MovieUseCase {
 
-    override fun getAllMovie(): Flow<Resource<List<Movie>>> {
-        return movieRepository.getAllMovie()
-    }
+    override fun getAllMovie(): Flow<Resource<List<Movie>>> = movieRepository.getAllMovie()
 
-    override fun getFavoriteMovie(): Flow<List<Movie>> {
-        return movieRepository.getFavoriteMovie()
-    }
+    override fun getFavoriteMovie(): Flow<List<Movie>> = movieRepository.getFavoriteMovie()
 
-    override fun updateFavoriteMovie(movie: Movie, state: Boolean) {
-        return movieRepository.updateFavoriteMovie(movie, state)
-    }
+    override fun updateFavoriteMovie(movie: Movie, state: Boolean) =
+        movieRepository.updateFavoriteMovie(movie, state)
+
+    override fun getSearchMovie(searchQuery: String): Flow<Resource<List<Movie>>> =
+        movieRepository.getSearchMovie(searchQuery)
 }
