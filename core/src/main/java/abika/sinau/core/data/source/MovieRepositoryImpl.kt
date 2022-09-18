@@ -38,7 +38,7 @@ class MovieRepositoryImpl @Inject constructor(
             }
 
             override fun shouldFetch(data: List<Movie>?): Boolean {
-                return true
+                return data == null || data.isEmpty()
             }
 
             override suspend fun createCall(): Flow<ApiResponse<MovieListResponse>> {

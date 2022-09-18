@@ -47,7 +47,6 @@ class FavoriteActivity : AppCompatActivity() {
 
     private fun setupObserver() {
         viewModel.resulFavorite.observe(this@FavoriteActivity) { movie ->
-            toastShort("save: $movie")
             if (!movie.isNullOrEmpty()) {
                 hideEmptyState()
                 setupData(movie)
