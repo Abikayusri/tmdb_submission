@@ -73,10 +73,10 @@ class FavoriteActivity : AppCompatActivity() {
     }
 
     private fun hideEmptyState() {
-        binding.inclEmptyState.root.gone()
+        binding.incEmptyState.root.gone()
     }
 
     private fun showEmptyState() {
-        binding.inclEmptyState.root.visible()
+        binding.incEmptyState.root.visible()
     }
 }

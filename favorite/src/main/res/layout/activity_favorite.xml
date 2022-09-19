@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/not_black"
     tools:context=".FavoriteActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -20,7 +21,7 @@
         tools:listitem="@layout/item_movie_list" />
 
     <include
-        android:id="@+id/inclEmptyState"
+        android:id="@+id/incEmptyState"
         layout="@layout/empty_state"
         android:layout_width="match_parent"
         android:layout_height="0dp"

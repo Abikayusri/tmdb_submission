@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyMovieDBSubmission</string>
+    <string name="app_name">MovieDBSubmission</string>
     <string name="title_favorite">Favorite</string>
     <string name="label_overview">Overview</string>
     <string name="favorite">Favorite</string>

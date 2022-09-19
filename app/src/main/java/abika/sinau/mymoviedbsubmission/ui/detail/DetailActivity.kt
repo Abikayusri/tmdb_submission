@@ -4,6 +4,7 @@ import abika.sinau.core.R
 import abika.sinau.core.domain.model.Movie
 import abika.sinau.core.utils.Api.BASE_IMAGE_URL
 import abika.sinau.core.utils.Api.BASE_IMAGE_URL_500
+import abika.sinau.core.utils.DateUtils
 import abika.sinau.core.utils.loadImage
 import abika.sinau.mymoviedbsubmission.databinding.ActivityDetailBinding
 import android.content.Context
@@ -36,7 +37,10 @@ class DetailActivity : AppCompatActivity() {
     private fun showDetailMovie(data: Movie?) {
         binding.apply {
             tvTitle.text = data?.title
-            tvReleaseDate.text = data?.releaseDate
+            tvReleaseDate.text = DateUtils.convertDateFromTo(data?.releaseDate,
+                DateUtils.YYYY_MM_DD_DASH,
+                DateUtils.DD_MMM_YYYY
+            )
             tvOverview.text = data?.overview
 
             ivBackdrop.loadImage(BASE_IMAGE_URL_500 + data?.backdropPath)
