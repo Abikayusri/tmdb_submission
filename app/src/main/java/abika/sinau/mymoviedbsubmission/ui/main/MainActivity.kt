@@ -94,8 +94,8 @@ class MainActivity : AppCompatActivity() {
 
         val searchEditText =
             binding.svMovie.findViewById<EditText>(androidx.appcompat.R.id.search_src_text)
-        searchEditText.setHintTextColor(resources.getColor(R.color.gray))
-        searchEditText.setTextColor(resources.getColor(R.color.black))
+        searchEditText.setHintTextColor(getColor(R.color.gray))
+        searchEditText.setTextColor(getColor(R.color.black))
     }
 
     private fun setupMovie() {

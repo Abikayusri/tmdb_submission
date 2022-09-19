@@ -1,7 +1,7 @@
 package abika.sinau.core.di
 
+import abika.sinau.core.BuildConfig
 import abika.sinau.core.data.source.remote.network.ApiService
-import abika.sinau.core.utils.Api.BASE_URL
 import android.content.Context
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
@@ -33,8 +33,10 @@ object NetworkModule {
         authInterceptor: AuthInterceptor,
         chuckInterceptor: ChuckerInterceptor
     ): OkHttpClient {
-        val loggingInterceptor = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
+        val loggingInterceptor = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        } else {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
         }
 
         return OkHttpClient.Builder()
@@ -55,7 +57,7 @@ object NetworkModule {
     @Provides
     fun provideApiService(okHttpClient: OkHttpClient): ApiService {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()

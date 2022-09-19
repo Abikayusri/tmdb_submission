@@ -1,8 +1,8 @@
 package abika.sinau.core.data.source.remote.network
 
+import abika.sinau.core.BuildConfig
 import abika.sinau.core.data.source.remote.response.MovieListResponse
 import abika.sinau.core.data.source.remote.response.MovieResponse
-import abika.sinau.core.utils.Api.TOKEN
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -15,18 +15,18 @@ interface ApiService {
 
     @GET("movie/popular")
     suspend fun getPopularMovie(
-        @Query("api_key") apiKey: String = TOKEN
+        @Query("api_key") apiKey: String = BuildConfig.TOKEN
     ): MovieListResponse
 
     @GET("search/movie")
     suspend fun getSearchMovie(
-        @Query("api_key") apiKey: String = TOKEN,
+        @Query("api_key") apiKey: String = BuildConfig.TOKEN,
         @Query("query") searchQuery: String,
     ): MovieListResponse
 
     @GET("movie/{movie_id}")
     suspend fun getDetailMovie(
-        @Query("api_key") apiKey: String = TOKEN,
+        @Query("api_key") apiKey: String = BuildConfig.TOKEN,
         @Path("movie_id") movieId: String,
     ): MovieResponse
 }
