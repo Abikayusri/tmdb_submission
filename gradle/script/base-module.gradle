@@ -1,9 +1,6 @@
 import dependencies.Dependencies
 
 dependencies {
-    // GSON
-//    implementation Dependencies.Build.gson
-
     // Coroutine
     implementation Dependencies.Coroutines.coroutinesCore
     implementation Dependencies.Coroutines.coroutinesAndroid
@@ -43,9 +40,6 @@ dependencies {
     // Interceptor
     debugImplementation Dependencies.Chucker.core
     releaseImplementation Dependencies.Chucker.core
-
-    // Data store
-//    implementation "androidx.datastore:datastore-preferences:1.0.0"
 
     // Shared Pref
     implementation Dependencies.SharedPrefs.sharedPrefKtx
