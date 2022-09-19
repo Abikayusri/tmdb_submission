@@ -1,7 +1,5 @@
 package abika.sinau.core.utils
 
-import abika.sinau.core.BuildConfig
-
 
 /**
  * @author by Abika Chairul Yusri on 9/15/2022
