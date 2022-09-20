@@ -15,18 +15,7 @@ object Dependencies {
     }
 
     object Build {
-        private const val androidBuildToolsVersion = "7.0.4"
-        const val androidBuildTools = "com.android.tools.build:gradle:$androidBuildToolsVersion"
-
-        const val kotlinGradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
-
-        private const val hiltAndroidGradlePluginVersion = "2.38.1"
-        const val hiltAndroidGradlePlugin =
-            "com.google.dagger:hilt-android-gradle-plugin:$hiltAndroidGradlePluginVersion"
-
         const val recyclerView = "androidx.recyclerview:recyclerview:1.2.0-alpha03"
-        const val recyclerViewSelection = "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
-        const val swipe = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01"
         const val constraint = "androidx.constraintlayout:constraintlayout:2.1.4"
         const val fragment = "androidx.fragment:fragment-ktx:1.5.2"
         const val activity = "androidx.activity:activity-ktx:1.5.1"
@@ -36,16 +25,8 @@ object Dependencies {
         const val lifecycleViewModelKtx =
             "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
         const val lifecycleExtensions = "androidx.lifecycle:lifecycle-extensions:$lifecycleExtensionVersion"
-        const val lifecycleRuntime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVersion"
-        const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata:$lifecycleVersion"
         const val lifecycleLiveDataKtx = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
         const val lifecycleCommonJava8 = "androidx.lifecycle:lifecycle-common-java8:$lifecycleVersion"
-        const val coordinatorLayout = "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
-
-        private const val stdblibVersion = "1.6.21"
-        const val stdlibCommon = "org.jetbrains.kotlin:kotlin-stdlib-common:$stdblibVersion"
-        const val stdlibJvm = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$stdblibVersion"
-        const val stdlibJs = "org.jetbrains.kotlin:kotlin-stdlib-js:$stdblibVersion"
     }
 
     object Coroutines {
@@ -53,12 +34,6 @@ object Dependencies {
         const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
         const val coroutinesAndroid =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-        const val coroutinesReactive =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-reactive:$coroutinesVersion"
-        const val coroutinesPlayServices =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$coroutinesVersion"
-        const val coroutinesDebug =
-            "org.jetbrains.kotlinx:kotlinx-coroutines-debug:$coroutinesVersion"
     }
 
     object DaggerHilt {
@@ -78,21 +53,12 @@ object Dependencies {
         const val compiler = "com.github.bumptech.glide:compiler:$version"
     }
 
-    object Kotlin {
-        const val version = "1.6.10"
-    }
-
     object Okhttp {
         private const val okhttpVersion = "4.9.3"
         const val client = "com.squareup.okhttp3:okhttp:$okhttpVersion"
         const val log = "com.squareup.okhttp3:logging-interceptor:$okhttpVersion"
-        const val ktor = "io.ktor:ktor-client-okhttp:1.3.1"
     }
 
-    object Paging {
-        private const val pagingVersion = "3.1.0"
-        const val core = "androidx.paging:paging-runtime-ktx:$pagingVersion"
-    }
 
     object Retrofit {
         private const val retrofitVersion = "2.9.0"
@@ -107,15 +73,9 @@ object Dependencies {
         const val roomKtx = "androidx.room:room-ktx:$roomVersion"
     }
 
-    object RxPrefs {
-        private const val rxVersion = "2.0.3"
-        const val core = "com.afollestad.rxkprefs:core:$rxVersion"
-        const val coroutine = "com.afollestad.rxkprefs:coroutines:$rxVersion"
-    }
 
     object SharedPrefs {
         private const val sharedPrefVersion = "1.2.0"
-        const val sharedPref = "androidx.preference:preference:$sharedPrefVersion"
         const val sharedPrefKtx = "androidx.preference:preference-ktx:$sharedPrefVersion"
     }
 
