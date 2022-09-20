@@ -19,3 +19,21 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class io.chirp.connect.** { *; }
+-keep class chirpconnect.** { *; }
+-keep class javax.annotation.** { *; }
+-dontwarn javax.annotation.**
+-dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement
+
+-keepnames @dagger.hilt.android.lifecycle.HiltViewModel class * extends androidx.lifecycle.ViewModel
+
+# Just because native code accesses members of a class, does not mean that the
+# class itself needs to be annotated - only annotate classes that are
+# referenced themselves in native code.
+-keep @com.google.android.filament.proguard.UsedBy* class * {
+  <init>();
+}
+-keepclassmembers class * {
+  @com.google.android.filament.proguard.UsedBy* *;
+}

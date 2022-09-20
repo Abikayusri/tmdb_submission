@@ -41,8 +41,12 @@ dependencies {
     debugImplementation Dependencies.Chucker.core
     releaseImplementation Dependencies.Chucker.core
 
-    // Shared Pref
-    implementation Dependencies.SharedPrefs.sharedPrefKtx
-
     implementation Dependencies.Build.recyclerView
+
+    // Leak Canary
+    debugImplementation Dependencies.Testing.leakCanary
+
+    // Security
+    implementation Dependencies.Security.sqlChiper
+    implementation Dependencies.Security.sqlite
 }

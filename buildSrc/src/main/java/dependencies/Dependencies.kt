@@ -121,10 +121,21 @@ object Dependencies {
 
         private const val roomVersion = "2.4.3"
         const val roomTesting = "androidx.room:room-testing:$roomVersion"
+
+        private const val leakCanaryVersion = "2.4"
+        const val leakCanary = "com.squareup.leakcanary:leakcanary-android:$leakCanaryVersion"
     }
 
     object Chucker {
         private const val chuckerVersion = "3.5.2"
         const val core = "com.github.chuckerteam.chucker:library:$chuckerVersion"
+    }
+    
+    object Security {
+        private const val sqlChiperVersion = "4.4.0"
+        const val sqlChiper = "net.zetetic:android-database-sqlcipher:$sqlChiperVersion"
+
+        private const val sqliteVersion = "2.1.0"
+        const val sqlite = "androidx.sqlite:sqlite-ktx:$sqliteVersion"
     }
 }
