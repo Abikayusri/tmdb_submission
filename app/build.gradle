@@ -21,18 +21,17 @@ android {
         versionName "1.0"
         multiDexEnabled true
 
+        consumerProguardFiles "consumer-rules.pro"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
             minifyEnabled true
-            consumerProguardFiles "consumer-rules.pro"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled true
-            consumerProguardFiles "consumer-rules.pro"
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
