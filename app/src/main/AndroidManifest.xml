@@ -15,11 +15,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyMovieDBSubmission"
+        tools:ignore="LockedOrientationActivity"
         tools:targetApi="31">
         <activity
             android:name=".ui.splash.SplashScreenActivity"
-            android:theme="@style/Theme.MyMovieDBSubmission.NoActionBar"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyMovieDBSubmission.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,11 +30,13 @@
         </activity>
         <activity
             android:name=".ui.detail.DetailActivity"
-            android:theme="@style/Theme.MyMovieDBSubmission.NoActionBar"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MyMovieDBSubmission.NoActionBar" />
         <activity
             android:name=".ui.main.MainActivity"
-            android:exported="false"/>
+            android:exported="false"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
